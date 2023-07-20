@@ -14,12 +14,12 @@
               <li><a href="#"></a></li>
               <li><a href=""></a></li> --}}
       
-              <li class="dropdown"><a href="#" ><span>Aplikasi Terpadu</span><i class="bi bi-chevron-down"></i></a>
+              {{-- <li class="dropdown"><a href="#" ><span>Aplikasi Terpadu</span><i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="https://antrian.timurbersinar.com/" target="_blank">Sistem Antrian</a></li>
                   <li><a href="https://parkir.timurbersinar.com/" target="_blank">Kartu Parkir Elektronik</a></li>
                 </ul>
-              </li> 
+              </li>  --}}
            
               {{-- <li class="dropdown"><a href="#"><span>GIS LPSPL Sorong</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -28,10 +28,10 @@
                   <li><a href="infomamalialautterdampar.html">Sebaran Mamalia Laut Terdampar</a></li>
                 </ul>
               </li> --}}
-              <li class="dropdown"><a href="#"><span>Katalog Jenis Ikan</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
+              <li><a href="{{ route('catalog_user_dashboard') }}"><span>Publikasi</span></a>
+                {{-- <ul>
                   <li><a href="katalog/katalogteripang.html">Katalog Teripang</a></li>
-                </ul>
+                </ul> --}}
               </li>
       
               <li><a href="{{ url('/') }}" class="getstarted">Laman Utama</a></li>
