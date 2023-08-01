@@ -1,7 +1,7 @@
 <div>
     <div class="container">
 
-        <h5 class="mb-3" >Tambah Kategori Katalog</h5>
+        <h5 class="mb-3" >Tambah Kategori</h5>
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <label for="nama_kategori">Nama Kategori</label>

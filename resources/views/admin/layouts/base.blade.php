@@ -46,26 +46,26 @@
 
       @livewireScripts
    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('/lay/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('lay/vendor/jquery/jquery.min.js') }}"></script>
     {{-- <script src="{{ asset('/lay/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
 
       <!-- Core plugin JavaScript-->
-    <script src="{{ asset('/lay/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('lay/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
      <!-- Common -->
-    <script src="{{ asset('/js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
  
     {{-- Select2 Js --}}
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <!-- Page Specific JS -->
-    <script src="{{ asset('/assets/js/app.js') }}"></script> 
+    <script src="{{ asset('assets/js/app.js') }}"></script> 
 
     {{-- Lama --}}
       {{-- <script src="{{ asset('/assets/js/lib/jquery.min.js') }}"></script> --}}
-    <script src="{{ asset('/assets/lama/js/lib/jquery.nanoscroller.min.js') }}"></script>
-    <script src="{{ asset('/assets/lama/js/lib/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/assets/lama/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets/lama/js/lib/jquery.nanoscroller.min.js') }}"></script>
+    <script src="{{ asset('assets/lama/js/lib/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/lama/js/scripts.js') }}"></script>
 
     @stack('select2')
     @stack('script')

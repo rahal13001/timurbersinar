@@ -183,7 +183,7 @@
                   <circle cx="3.5" cy="10.5" r=".5" />
                 </svg>
               </span>
-              <span class="nav-link-text">Kategori Katalog</span> </a>
+              <span class="nav-link-text">Kategori</span> </a>
               <!--//nav-link-->
           </li>
           

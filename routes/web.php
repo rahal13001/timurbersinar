@@ -38,7 +38,7 @@ Route::group(['prefix' => 'pengelola'], function () {
     })->name('catalog_dashboard');
     
     Route::get('/catalog/detail/{catalog}',[CatalogController::class,'detail'])->name('catalog_detail');
-});
+})->middleware('auth');
 
 Route::get('/publikasi/detail/{catalog}/{nama}',[CatalogController::class,'detail_user'])->name('catalog_user_detail');
 
