@@ -24,7 +24,7 @@ Route::get('/', function () {
 //     return view('admin.layouts.back');
 // });
 
-Route::group(['prefix' => 'pengelola'], function () {
+Route::group(['middleware' => 'auth','prefix' => 'pengelola'], function () {
     Route::get('/catalog-category-dashboard', function () {
         return view('admin.catalog.catalog_category');
     });
@@ -38,7 +38,7 @@ Route::group(['prefix' => 'pengelola'], function () {
     })->name('catalog_dashboard');
     
     Route::get('/catalog/detail/{catalog}',[CatalogController::class,'detail'])->name('catalog_detail');
-})->middleware('auth');
+});
 
 Route::get('/publikasi/detail/{catalog}/{nama}',[CatalogController::class,'detail_user'])->name('catalog_user_detail');
 
