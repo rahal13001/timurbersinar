@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\bukutamu\GuestbooksController;
 use App\Http\Controllers\admin\catalog\CatalogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,17 @@ Route::group(['middleware' => 'auth','prefix' => 'pengelola'], function () {
     })->name('catalog_dashboard');
     
     Route::get('/catalog/detail/{catalog}',[CatalogController::class,'detail'])->name('catalog_detail');
+
+    Route::get('/bukutamu', function(){
+        return view('admin.bukutamu.dashboardbukutamu');
+    })->name('dashboard_bukutamu');
+
+    Route::get('tambahdatabukutamu', function(){
+        return view('admin.bukutamu.tambahbukutamu');
+    })->name('add_bukutamu');
+
+    Route::get('/bukutamu/detail/{guestbook}',[GuestbooksController::class,'detail'])->name('bukutamu_detail');
+
 });
 
 Route::get('/publikasi/detail/{catalog}/{nama}',[CatalogController::class,'detail_user'])->name('catalog_user_detail');
@@ -59,6 +71,12 @@ Route::get('/publikasi', function () {
 // })->name('catalog_dashboard');
 
 // Route::get('/catalog/detail/{catalog}',[CatalogController::class,'detail'])->name('catalog_detail');
+
+Route::group(['prefix' => 'bukutamu'], function(){
+    Route::get('/', function () {
+        return view('user.bukutamu.formbukutamu');
+    });
+});
 
 Auth::routes(['register' => false]);
 
