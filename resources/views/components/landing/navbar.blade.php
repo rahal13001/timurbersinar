@@ -33,6 +33,12 @@
                   <li><a href="katalog/katalogteripang.html">Katalog Teripang</a></li>
                 </ul> --}}
               </li>
+
+              <li><a href="{{ route('user_bukutamu') }}"><span>Buku Tamu</span></a>
+                {{-- <ul>
+                  <li><a href="katalog/katalogteripang.html">Katalog Teripang</a></li>
+                </ul> --}}
+              </li>
       
               <li><a href="{{ url('/') }}" class="getstarted">Laman Utama</a></li>
               <!-- <li><a href="arcgis.html" class="getstarted" target="_blank">Data Sebaran Terumbu Karang BHS</a></li> -->

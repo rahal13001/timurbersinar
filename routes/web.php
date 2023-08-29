@@ -75,7 +75,7 @@ Route::get('/publikasi', function () {
 Route::group(['prefix' => 'bukutamu'], function(){
     Route::get('/', function () {
         return view('user.bukutamu.formbukutamu');
-    });
+    })->name('user_bukutamu');
 });
 
 Auth::routes(['register' => false]);
