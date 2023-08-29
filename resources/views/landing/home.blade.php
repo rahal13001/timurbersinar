@@ -167,7 +167,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <a href="http://bukutamu.timurbersinar.com/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
+              <a href="http://timurbersinar.com/bukutamu" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
               <img src="{{ asset("assets/img/portofolio/bukutamu.png") }}" class="img-fluid" alt="">
               </a>
               {{-- <div class="portfolio-info">
