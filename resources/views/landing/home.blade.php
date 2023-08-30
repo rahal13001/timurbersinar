@@ -183,22 +183,6 @@
             </div>  
           </div>
 
-          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <a href="http://timurbersinar.com/bukutamu" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
-              <img src="{{ asset("assets/img/portofolio/bukutamu.png") }}" class="img-fluid" alt="">
-              </a> --}}
-              {{-- <div class="portfolio-info">
-                <h4>Buku Tamu</h4>
-                <p>Kami mencatat kunjungan anda karena anda begitu berkesan bagi kami</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset("assets/img/portofolio/bukutamu.png") }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"></a>
-                  <a href="http://bukutamu.timurbersinar.com/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div> --}}
-            {{-- </div>
-          </div> --}}
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div>
               <a href="http://ptsp.kkp.go.id/skm/s/u/88" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">

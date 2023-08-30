@@ -21,24 +21,25 @@
                 </ul>
               </li>  --}}
            
-              {{-- <li class="dropdown"><a href="#"><span>GIS LPSPL Sorong</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <!-- <li><a href="arcgis.html">Terumbu Karang BHS</a></li>
-                  <li><a href="spasiallpsplsorong.html">Data Spasial LPSPL Sorong</a></li> -->
-                  <li><a href="infomamalialautterdampar.html">Sebaran Mamalia Laut Terdampar</a></li>
-                </ul>
-              </li> --}}
-              <li><a href="{{ route('catalog_user_dashboard') }}"><span>Publikasi</span></a>
+
+              <li><a href="{{ route('catalog_user_dashboard') }}" ><span>Publikasi</span></a>
                 {{-- <ul>
                   <li><a href="katalog/katalogteripang.html">Katalog Teripang</a></li>
                 </ul> --}}
               </li>
 
-              <li><a href="{{ route('user_bukutamu') }}"><span>Buku Tamu</span></a>
-                {{-- <ul>
-                  <li><a href="katalog/katalogteripang.html">Katalog Teripang</a></li>
-                </ul> --}}
+              <li class="dropdown"><a href="#"><span>Dukungan Layanan</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  
+                    
+                    <li><a href="{{ route('user_bukutamu') }}">Buku Tamu</a></li>
+                    <li><a href="https://antrian.timurbersinar.com/" target="_blank">Antrian</a></li>
+                    <li><a href="https://parkir.timurbersinar.com/" target="_blank">Parkir</a></li>
+                  
+                </ul>
               </li>
+
+             
       
               <li><a href="{{ url('/') }}" class="getstarted">Laman Utama</a></li>
               <!-- <li><a href="arcgis.html" class="getstarted" target="_blank">Data Sebaran Terumbu Karang BHS</a></li> -->
