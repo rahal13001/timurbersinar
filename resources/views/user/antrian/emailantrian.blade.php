@@ -24,7 +24,7 @@
                     <tr>
                         <td style="text-align:center;">
                           <a href="https://timurbersinar.com" title="logo" target="_blank">
-                            <img width="60" src="{{ asset('assets/img/logokkp_putih.png') }}" title="logo" alt="logo">
+                            <img width="60" src="{{ $message->embed(public_path().'/assets/img/logokkp_putih.png') }}" title="logo" alt="logo">
                           </a>
                         </td>
                     </tr>

@@ -59,7 +59,6 @@ class Formantrian extends Component
 
         //    dispatch(new SendMailJob($client));
         SendMailJob::dispatch($client);
-        // Mail::to($client->email)->send(new QueueMail($client));
 
         return redirect()->route('antrianku', [$client, $client->nama]);
         
