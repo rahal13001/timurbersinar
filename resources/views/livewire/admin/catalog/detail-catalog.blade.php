@@ -11,7 +11,7 @@
 
             <div class="col-md-2">
                 <div class="form-check form-switch text-align-right">
-                    <input class="form-check-input" type="checkbox" role="switch" id="edit_toggle" wire:model = 'edit_toggle'>
+                    <input class="form-check-input" type="checkbox" role="switch" id="edit_toggle" wire:model.live = 'edit_toggle'>
                     <label class="form-check-label" for="edit_toggle"><b>Edit</b></label>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <label for="nama"><strong>Judul</strong></label>
-                    <input  type="text" wire:model = "nama" class="form-control {{$errors->first('nama') ? "is-invalid" : "" }}" id="nama"
+                    <input  type="text" wire:model.live = "nama" class="form-control {{$errors->first('nama') ? "is-invalid" : "" }}" id="nama"
                     placeholder="Isikan Judul...." {{ $edit_toggle != true ? "disabled" : "" }}>
                     @error('nama')
                     <div class="invalid-feedback">
@@ -34,7 +34,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="tahun"><strong>Tahun</strong></label>
-                    <input  type="number" wire:model = "tahun" class="form-control {{$errors->first('tahun') ? "is-invalid" : "" }}"
+                    <input  type="number" wire:model.live = "tahun" class="form-control {{$errors->first('tahun') ? "is-invalid" : "" }}"
                     id="tahun" placeholder="Isikan Tahun (YYYY)" {{ $edit_toggle != true ? "disabled" : "" }}>
                     @error('tahun')
                     <div class="invalid-feedback">
@@ -45,7 +45,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="penyusun"><strong>Nama Penyusun</strong></label>
-                    <textarea name="penyusun" wire:model = "penyusun" class="form-control {{$errors->first('penyusun') ? "is-invalid" : "" }}"
+                    <textarea name="penyusun" wire:model.live = "penyusun" class="form-control {{$errors->first('penyusun') ? "is-invalid" : "" }}"
                         id="penyusun" placeholder="Isikan Nama Penyusun...." {{ $edit_toggle != true ? "disabled" : "" }}></textarea>
             
                     @error('penyusun')
@@ -57,7 +57,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="penerbit"><strong>Nama Penerbit</strong></label>
-                    <input  type="text" wire:model = "penerbit" class="form-control {{$errors->first('penerbit') ? "is-invalid" : "" }}" id="penerbit"
+                    <input  type="text" wire:model.live = "penerbit" class="form-control {{$errors->first('penerbit') ? "is-invalid" : "" }}" id="penerbit"
                     placeholder="Isikan Nama Penerbit...." {{ $edit_toggle != true ? "disabled" : "" }} >
                     @error('penerbit')
                     <div class="invalid-feedback">
@@ -74,7 +74,7 @@
                 @else
                     <div class="col-sm-12 mt-3">
                         <label for="url"><strong>URL</strong></label>
-                        <textarea name="url" wire:model = "url" class="form-control {{$errors->first('url') ? "is-invalid" : "" }}" id="url"
+                        <textarea name="url" wire:model.live = "url" class="form-control {{$errors->first('url') ? "is-invalid" : "" }}" id="url"
                             placeholder="Isikan URL / Tautan Google Drive/One Drive/Dropbox, dll" {{ $edit_toggle != true ? "disabled" : "" }}></textarea>
                         
                         @error('url')
@@ -89,7 +89,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="keterangan"><strong>Keterangan</strong></label>
-                    <textarea name="keterangan" wire:model = "keterangan" class="form-control {{$errors->first('keterangan') ? "is-invalid" : "" }}" id="keterangan"
+                    <textarea name="keterangan" wire:model.live = "keterangan" class="form-control {{$errors->first('keterangan') ? "is-invalid" : "" }}" id="keterangan"
                         placeholder="Berikan keterangan (Jika Ada)" {{ $edit_toggle != true ? "disabled" : "" }}></textarea>
                     
                     @error('keterangan')

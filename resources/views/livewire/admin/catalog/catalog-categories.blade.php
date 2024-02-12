@@ -5,7 +5,7 @@
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <label for="nama_kategori">Nama Kategori</label>
-                    <input  type="text" wire:model = "nama_kategori" class="form-control {{$errors->first('nama_kategori') ? "is-invalid" : "" }}" id="nama_kategori" placeholder="Isikan Nama Kategori...." >
+                    <input  type="text" wire:model.live = "nama_kategori" class="form-control {{$errors->first('nama_kategori') ? "is-invalid" : "" }}" id="nama_kategori" placeholder="Isikan Nama Kategori...." >
                     @error('nama_kategori')
                     <div class="invalid-feedback">
                         {{ $message }}

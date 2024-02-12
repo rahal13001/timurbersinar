@@ -6,12 +6,12 @@
             <div class="row mb-2">
                 {{-- Kolom Cari --}}
                 <div class="col-md-3 col-sm-3 d-flex">
-                      <input class="form-control form-control-sm" type="text" placeholder="Cari Data..." wire:model.debounce.300ms="cari"> 
+                      <input class="form-control form-control-sm" type="text" placeholder="Cari Data..." wire:model.live.debounce.300ms="cari"> 
                 </div>
 
                    {{-- Pagination --}}
             <div class="col-md-2 col-sm-2 d-flex">
-                <select wire:model="paginate" name="paginate" id="paginate" class="form-control form-control-sm rounded-md shadow-sm">
+                <select wire:model.live="paginate" name="paginate" id="paginate" class="form-control form-control-sm rounded-md shadow-sm">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
@@ -21,11 +21,11 @@
             </div>
 
             <div class="col-md-3 col-sm-3 d-flex">
-                <select wire:model="orderby" name="orderby" id="orderby" class="form-control form-control-sm rounded-md shadow-sm">
+                <select wire:model.live="orderby" name="orderby" id="orderby" class="form-control form-control-sm rounded-md shadow-sm">
                     <option selected value="id">Urutan Default</option>
                     <option value="nama">Nama</option>
                 </select>
-                <select wire:model="asc" name="asc" id="asc" class="form-control form-control-sm rounded-md shadow-sm">
+                <select wire:model.live="asc" name="asc" id="asc" class="form-control form-control-sm rounded-md shadow-sm">
                   <option value="ASC">Terkecil</option>
                   <option value="DESC">Terbesar</option>
                 </select>
@@ -63,7 +63,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th><input type="checkbox" wire:model="selectPage"></th>
+                        <th><input type="checkbox" wire:model.live="selectPage"></th>
                           <th class="text-center col-1">No</th>
                           <th class="text-center col-4" >Kategori</th>
                           <th class="text-center col-3">Aksi</th>  
@@ -72,7 +72,7 @@
                       <tbody>
                         @foreach ($categories as $category) 
                             <tr class="@if ($this->isChecked($category->id)) table-primary @endif"> 
-                                <td><input type="checkbox" value="{{ $category->id }}" wire:model="checked">
+                                <td><input type="checkbox" value="{{ $category->id }}" wire:model.live="checked">
                                     @if ($editedcategoryIndex == $category->id)
                                     @endif</td>
                                 <td class="text-center col-1">{{ $loop->iteration }}</td>
@@ -82,7 +82,7 @@
                                     {{ $category->nama_kategori }}
                                     
                                     @else
-                                    <input  type="text" wire:model.defer ="setcategories.{{$category->id}}.nama_kategori" class="form-control
+                                    <input  type="text" wire:model ="setcategories.{{$category->id}}.nama_kategori" class="form-control
                                         {{$errors->first('nama') ? "is-invalid" : "" }}" id="nama">                                
                                         @error('nama')
                                         <div class="invalid-feedback">

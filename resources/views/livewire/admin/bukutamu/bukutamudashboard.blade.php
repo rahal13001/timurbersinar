@@ -3,27 +3,27 @@
 
     <div class="row mb-2">
         <div class="col-md-3 col-sm-3 d-flex">
-            <input class="form-control form-control-sm" type="text" placeholder="Cari Publikasi..." wire:model.debounce.300ms="cari">
+            <input class="form-control form-control-sm" type="text" placeholder="Cari Publikasi..." wire:model.live.debounce.300ms="cari">
         </div>
        
          {{-- Total --}}
          <div class="col-md-4 col-sm-4 d-flex">
-            <input type="date" class="form-control" name="mulai" placeholder="mulai" wire:model = 'mulai'>
-            <input type="date" class="form-control" name="akhir" placeholder="akhir" wire:model = 'akhir'>
+            <input type="date" class="form-control" name="mulai" placeholder="mulai" wire:model.live = 'mulai'>
+            <input type="date" class="form-control" name="akhir" placeholder="akhir" wire:model.live = 'akhir'>
         
               
           </div>
 
           {{-- Urutan --}}
           <div class="col-md-3 col-sm-3 d-flex">
-            <select wire:model="orderby" name="orderby" id="orderby" class="form-control form-control-sm rounded-md shadow-sm">
+            <select wire:model.live="orderby" name="orderby" id="orderby" class="form-control form-control-sm rounded-md shadow-sm">
                 <option selected value="id">Urutan Default</option>
                 <option value="nama">Nama</option>
                 <option value="tanggal">Tanggal Datang</option>
                 <option value="lokasi">Lokasi</option>
                 
             </select>
-            <select wire:model="asc" name="asc" id="asc" class="form-control form-control-sm rounded-md shadow-sm">
+            <select wire:model.live="asc" name="asc" id="asc" class="form-control form-control-sm rounded-md shadow-sm">
               <option value="ASC">Terkecil</option>
               <option value="DESC">Terbesar</option>
             </select>
@@ -31,7 +31,7 @@
 
            {{-- Pagination --}}
             <div class="col-md-2 col-sm-2 d-flex">
-                <select wire:model="paginate" name="paginate" id="paginate" class="form-control form-control-sm rounded-md shadow-sm">
+                <select wire:model.live="paginate" name="paginate" id="paginate" class="form-control form-control-sm rounded-md shadow-sm">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
@@ -44,7 +44,7 @@
     </div>
     <div class="row mb-2">
         <div class="col-md-4 col-sm-4 mt-3">
-        <select class="form-select @error('lokasi') is-invalid @enderror" aria-label="lokasi" name="lokasi" wire:model = 'lokasi'>
+        <select class="form-select @error('lokasi') is-invalid @enderror" aria-label="lokasi" name="lokasi" wire:model.live = 'lokasi'>
             <option selected value="{{ old('lokasi') }}">Pilih Lokasi Satker Tujuan</option>
             <option value="Sorong">Sorong</option>
             <option value="Merauke">Merauke</option>
@@ -106,7 +106,7 @@
                 <tr>
                     @auth
                         
-                    <th><input type="checkbox" wire:model="selectPage"></th>
+                    <th><input type="checkbox" wire:model.live="selectPage"></th>
                     @endauth
                   <th class="text-center">No</th>
                   <th class="text-center">Tanggal</th>
@@ -122,7 +122,7 @@
                 @foreach ($datas as $data)
                   <tr class="@if ($this->isChecked($data->id)) table-primary @endif">
                     @auth
-                    <td><input type="checkbox" value="{{ $data->id }}" wire:model="checked"></td>
+                    <td><input type="checkbox" value="{{ $data->id }}" wire:model.live="checked"></td>
                     @endauth
                     <td class="text-center">{{ $loop->iteration}}</td>       
                     <td class="text-center">{{ $data->tanggal }}</td>

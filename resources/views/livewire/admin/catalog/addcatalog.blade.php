@@ -8,7 +8,7 @@
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <label for="nama"><strong>Judul</strong></label>
-                    <input  type="text" wire:model = "nama" class="form-control {{$errors->first('nama') ? "is-invalid" : "" }}" id="nama" placeholder="Isikan Judul...." >
+                    <input  type="text" wire:model.live = "nama" class="form-control {{$errors->first('nama') ? "is-invalid" : "" }}" id="nama" placeholder="Isikan Judul...." >
                     @error('nama')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -18,7 +18,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="tahun"><strong>Tahun</strong></label>
-                    <input  type="number" wire:model = "tahun" class="form-control {{$errors->first('tahun') ? "is-invalid" : "" }}" id="tahun" placeholder="Isikan Tahun (YYYY)" >
+                    <input  type="number" wire:model.live = "tahun" class="form-control {{$errors->first('tahun') ? "is-invalid" : "" }}" id="tahun" placeholder="Isikan Tahun (YYYY)" >
                     @error('tahun')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -28,7 +28,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="penyusun"><strong>Nama Penyusun</strong></label>
-                    <textarea name="penyusun" wire:model = "penyusun" class="form-control {{$errors->first('penyusun') ? "is-invalid" : "" }}" id="penyusun" placeholder="Isikan Nama Penyusun...."></textarea>
+                    <textarea name="penyusun" wire:model.live = "penyusun" class="form-control {{$errors->first('penyusun') ? "is-invalid" : "" }}" id="penyusun" placeholder="Isikan Nama Penyusun...."></textarea>
             
                     @error('penyusun')
                     <div class="invalid-feedback">
@@ -39,7 +39,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="penerbit"><strong>Nama Penerbit</strong></label>
-                    <input  type="text" wire:model = "penerbit" class="form-control {{$errors->first('penerbit') ? "is-invalid" : "" }}" id="penerbit" placeholder="Isikan Nama Penerbit...." >
+                    <input  type="text" wire:model.live = "penerbit" class="form-control {{$errors->first('penerbit') ? "is-invalid" : "" }}" id="penerbit" placeholder="Isikan Nama Penerbit...." >
                     @error('penerbit')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -49,7 +49,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="url"><strong>URL</strong></label>
-                    <textarea name="url" wire:model = "url" class="form-control {{$errors->first('url') ? "is-invalid" : "" }}" id="url" placeholder="Isikan URL / Tautan Google Drive/One Drive/Dropbox, dll"></textarea>
+                    <textarea name="url" wire:model.live = "url" class="form-control {{$errors->first('url') ? "is-invalid" : "" }}" id="url" placeholder="Isikan URL / Tautan Google Drive/One Drive/Dropbox, dll"></textarea>
                     
                     @error('url')
                     <div class="invalid-feedback">
@@ -60,7 +60,7 @@
 
                 <div class="col-sm-12 mt-3">
                     <label for="keterangan"><strong>Keterangan</strong></label>
-                    <textarea name="keterangan" wire:model = "keterangan" class="form-control {{$errors->first('keterangan') ? "is-invalid" : "" }}" id="keterangan" placeholder="Berikan keterangan (Jika Ada)"></textarea>
+                    <textarea name="keterangan" wire:model.live = "keterangan" class="form-control {{$errors->first('keterangan') ? "is-invalid" : "" }}" id="keterangan" placeholder="Berikan keterangan (Jika Ada)"></textarea>
                     
                     @error('keterangan')
                     <div class="invalid-feedback">

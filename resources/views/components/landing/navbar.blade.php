@@ -32,8 +32,8 @@
                 <ul>
                   
                     
-                    <li><a href="{{ route('user_bukutamu') }}">Buku Tamu</a></li>
-                    <li><a href="https://antrian.timurbersinar.com/" target="_blank">Antrian</a></li>
+                    <li><a href="{{ route('user_bukutamu') }}" target="_blank">Buku Tamu</a></li>
+                    <li><a href="{{ route('user_antrian') }}" target="_blank">Antrian</a></li>
                     <li><a href="https://parkir.timurbersinar.com/" target="_blank">Parkir</a></li>
                   
                 </ul>
