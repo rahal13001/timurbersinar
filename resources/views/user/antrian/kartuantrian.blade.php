@@ -80,7 +80,7 @@
 <body>
     <div class="queue-card">
         <div class="queue-card-logo">
-            <img src="{{ asset('assets/img/logokkp.jpg') }}" alt="Ministry logo">
+            <img src="{{ asset('assets/img/logokkp_putih.png') }}" alt="Ministry logo">
         </div>
         <div class="queue-card-header">
             <div class="kartu-antrian-text">KARTU ANTRIAN<br>PELAYANAN LPSPL SORONG<br>DI {{ strtoupper($client->location->lokasi) }}</div>
