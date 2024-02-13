@@ -21,13 +21,13 @@
                     <tr>
                         <td style="height:80px;">&nbsp;</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td style="text-align:center;">
                           <a href="https://timurbersinar.com" title="logo" target="_blank">
                             <img width="60" src="{{ $message->embed(public_path().'/assets/img/logokkp_putih.png') }}" title="logo" alt="logo">
                           </a>
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <td style="height:20px;">&nbsp;</td>
                     </tr>
