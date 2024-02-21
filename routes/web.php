@@ -77,6 +77,10 @@ Route::group(['middleware' => 'auth','prefix' => 'pengelola'], function () {
         Route::get('/videodisplay', function(){
             return view('admin.antrian.video');
         })->name('videoantrian');
+        Route::get('proseslayanan', function(){
+            return view('admin.antrian.proseslayanan');
+        });
+   
     });
     
 });

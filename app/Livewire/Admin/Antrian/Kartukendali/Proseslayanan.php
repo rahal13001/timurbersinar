@@ -1,62 +1,63 @@
 <?php
 
-namespace App\Livewire\Admin\Antrian\Client;
+namespace App\Livewire\Admin\Antrian\Kartukendali;
 
-use App\Exports\QueueclientExport;
-use App\Models\admin\antrian\Client;
-use App\Models\admin\antrian\Location;
+use App\Models\admin\antrian\Process;
 use App\Models\admin\antrian\Service;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
+use Livewire\Attributes\Rule;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithPagination;
-use Maatwebsite\Excel\Facades\Excel;
 
-class ClientDashboard extends Component
+class Proseslayanan extends Component
 {
+
     use WithPagination;
     use LivewireAlert;
 
     protected $paginationTheme = 'bootstrap';
 
-    protected $listeners = ['sendnotifTambah' => 'notif'];
-
+    #[Rule ('required', message:"Nama Proses Wajib Diisi")]
+    #[Rule ('max:255', message:"Nama Proses Maksimal 255 Karakter")]
+    public $nama_proses;
+    #[Rule ('required', message:"Nomor Urut Wajib Diisi")]
+    public $no_urut;
+    #[Rule ('required', message:"Standar Waktu Wajib Diisi")]
+    public $standar;
+    #[Rule ('required', message:"Status Wajib Diisi")]
+    public $status;
+    #[Rule ('required', message:"Layanan Wajib Diisi")]
+    public $service_id = [];
+    
+    public $service = [];
+    public $process_id;
     public $paginate = 10;
     public $orderby = "created_at";
     public $asc = "DESC";
-    public $checked = [];
-    public $cari = "";
-    public $mulai;
-    public $akhir;
     public $selectPage= false;
     public $selectAll=false;
-    public $location = [];
-    public $service = [];
+    public $checked = [];
+    public $cari = "";
 
-    public function mulai(){
-        $this->validate([
-            'mulai' => 'nullable'
-        ]);
+    public function submit(){
+        $this->validate();
+        $process = New Process();
+        $process->nama_proses = $this->nama_proses;
+        $process->no_urut = $this->no_urut;
+        $process->standar = $this->standar;
+        $process->status = $this->status;
+        $process->save();
+        $process->services()->sync($this->service_id);
+
+        $this->dispatch('tambahproses')->self();
     }
-
-
-    public function akhir(){
-        $this->validate([
-            'akhir' => 'after_or_equal:mulai_',
-        ], [
-            'after_or_equal' => 'Tanggal Harus Sama Dengan Atau Lebih Dari Tanggal Awal',
-            ]);
-    }
-
-
-
     public function render()
     {
-        return view('livewire.admin.antrian.client.client-dashboard',
-        ["datas" => $this->datas,
-        "locations" => Location::get(),
-        "services" => Service::get(),
-        ]
-    );
+
+        return view('livewire.admin.antrian.kartukendali.proseslayanan', ([
+            'services'=>Service::get(),
+            'datas' => $this->datas
+        ]));
     }
 
     public function updatedSelectPage($value){
@@ -94,19 +95,8 @@ class ClientDashboard extends Component
 
     public function getDatasQueryProperty(){
 
-       return Client::with('location', 'service')                 
-                    ->when($this->mulai && $this->akhir, function($query){
-                     $query->whereBetween('created_at', [trim($this->mulai), trim($this->akhir)]);})
-                     ->when($this->mulai, function($query){
-                        $query->whereDate('created_at', '>=', trim($this->mulai));
-                     })
-                     ->when($this->akhir, function($query){
-                        $query->whereDate('created_at', '<=', trim($this->akhir));
-                     })
+       return Process::with('services')                 
                     ->cari(trim($this->cari))
-                    ->when($this->location, function($query){
-                        $query->where('location_id', $this->location);
-                    })
                     ->when($this->service, function($query){
                         $query->where('service_id', $this->service);
                     })
@@ -116,7 +106,7 @@ class ClientDashboard extends Component
 
     public function deleteDatas(){
         
-        $reports = Client::whereKey($this->checked)->delete();
+        $reports = Process::whereKey($this->checked)->delete();
         $this->checked = [];
         $this->selectAll=false;
         $this->selectPage=false;
@@ -133,7 +123,7 @@ class ClientDashboard extends Component
     public function deleteSatuData($data_id){
   
         
-        Client::where('id', $data_id)->delete();
+        Process::where('id', $data_id)->delete();
 
         $this->checked = array_diff($this->checked, [$data_id]);
         
@@ -143,10 +133,5 @@ class ClientDashboard extends Component
             'toast' => false,
             'timerProgressBar' => true,
            ]);
-    }
-
-
-    public function eksporexcel(){
-        return Excel::download(new QueueclientExport($this->checked), 'bukutamu.xlsx');
     }
 }
